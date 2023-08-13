@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập if else -- Switch Case</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    div.container-fluid {
+        /* position: relative; */
+        height: 100vh;
+        background: url("./img/nasa-Q1p7bh3SHj8-unsplash.jpg") no-repeat center/cover;
+
+    }
+
+    ul.nav {
+
+        position: fixed;
+        top: 2rem;
+
+    }
+
+    div.wrap {
+        width: 300px;
+    }
+
+    h2,
+    label {
+        font-size: 24px;
+        color: #eee;
+    }
+
+    h2,
+    h3 {
+        margin-bottom: 2rem;
+    }
+
+    h3,
+    p {
+        color: yellow;
+        text-shadow: #4afff3 1px 0 10px;
+        /* font-size: larger; */
+    }
+    p{
+        font-size: 20px;
+    }
+
+    input,
+    select,
+    option {
+
+        /* color: #fff; */
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+            -1px -1px 6px rgba(51, 50, 50, 0.4);
+    }
+
+    b {
+        color: greenyellow;
+        font-weight: 800;
+    }
+
+    button#but {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="wrap">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link btn btn-primary mr-2 mt-2 active" id="pills-home-tab" data-toggle="pill"
+                        data-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Bài
+                        1</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link btn btn-primary mr-2 mt-2" id="pills-profile-tab" data-toggle="pill"
+                        data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Bài 2</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link btn btn-primary mr-2 mt-2" id="pills-contact-tab" data-toggle="pill"
+                        data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Bài 3</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link btn btn-primary mr-2 mt-2" id="pills-bai4-tab" data-toggle="pill"
+                        data-target="#pills-bai4" type="button" role="tab" aria-controls="pills-bai4"
+                        aria-selected="false">Bài
+                        4</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Bài 1 -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <!-- ------------------------------------------------------ -->
+                    <!-- Bài 1 -->
+                    <div class=" mt-5">
+                        <h2>Nhập vào 3 số nguyên:</h2>
+                        <div class="form-group">
+                            <input class="form-control bg-transparent text-white border-0" type="number" id="num1"
+                                placeholder="Số thứ nhất">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control bg-transparent text-white border-0" type="number" id="num2"
+                                placeholder="Số thứ hai">
+
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control bg-transparent text-white border-0" type="number" id="num3"
+                                placeholder="Số thứ ba">
+
+                        </div>
+                        <br><br>
+                        <button class="btn btn-primary" id="but" onclick="sortNumbers()">Sắp xếp</button>
+                        <h3 class="mt-3">Sắp xếp tăng dần:</h3>
+                        <h3 id="result" class=""></h3>
+                    </div>
+                    <!--/ Bài 1 -->
+                    <!-- -------------------------------------------------- -->
+                </div>
+                <!-- Bài 2 -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <!-- BÀI 2 -->
+                    <div class=" mt-5">
+                        <h2>Chào hỏi gia đình</h2>
+                        <div class="form-group">
+                            <label for="user">DaatMiin chào bạn! <b>Ai đang sử dụng máy?</b></label>
+                            <select class="form-control bg-transparent text-white border-0" id="user">
+                                <option value="" class="text-dark bg-transparent">Chọn thành viên</option>
+                                <option value="B" class="text-dark bg-transparent">Bố</option>
+                                <option value="M" class="text-dark bg-transparent">Mẹ</option>
+                                <option value="A" class="text-dark bg-transparent">Anh Trai</option>
+                                <option value="E" class="text-dark bg-transparent">Em Gái</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="but" onclick="greet()">Gửi</button>
+                        <h3 id="greeting" class="mt-3"></h3>
+                    </div>
+                    <!--/ BÀI 2 -->
+                    <!-- -------------------------------------------------- -->
+                </div>
+                <!-- Bài 3 -->
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <!-- BÀI 3 -->
+                    <div class=" mt-5">
+                        <h2>Đếm số lẻ và số chẵn</h2>
+                        <div class="form-group">
+                            <label for="s1">Số thứ nhất</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="s1">
+                        </div>
+                        <div class="form-group">
+                            <label for="s2">Số thứ hai</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="s2">
+                        </div>
+                        <div class="form-group">
+                            <label for="s3">Số thứ ba</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="s3">
+                        </div>
+                        <button class="btn btn-primary" id="but" onclick="countNumbers()">Đếm</button>
+                        <h3 class="mt-3">Kết quả:</h3>
+                        <p id="resultBai3"></p>
+                    </div>
+                    <!--/ BÀI 3 -->
+                    <!-- -------------------------------------------------- -->
+
+                </div>
+                <!-- Bài 4 -->
+                <div class="tab-pane fade" id="pills-bai4" role="tabpanel" aria-labelledby="pills-bai4-tab">
+                    <!-- BÀI 4 -->
+                    <div class=" mt-5">
+                        <h2>Kiểm tra loại tam giác</h2>
+                        <div class="form-group">
+                            <label for="side1">Cạnh a</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="side1">
+                        </div>
+                        <div class="form-group">
+                            <label for="side2">Cạnh b</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="side2">
+                        </div>
+                        <div class="form-group">
+                            <label for="side3">Cạnh c</label>
+                            <input type="number" class="form-control bg-transparent text-white border-0" id="side3">
+                        </div>
+                        <button class="btn btn-primary" id="but" onclick="checkTriangle()">Kiểm tra</button>
+                        <h3 class="mt-3">Kết quả:</h3>
+                        <p id="resultBai4"></p>
+                    </div>
+                    <!--/ BÀI 4 -->
+                    <!-- -------------------------------------------------- -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
