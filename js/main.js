@@ -7,23 +7,6 @@ function sortNumbers() {
     var html;
     var num = [num1, num2, num3];
     var DESCsort = num.sort();
-    // Sắp xếp các số theo thứ tự tăng dần
-    // if (num1 > num2 && num1 > num3 && num2 > num3) {
-    //     html = num3 + ", " + num2 + ", " + num1;
-    // }else if(num2 > num1 && num2 > num3 && num1 > num3){
-    //     html = num3 + ", " + num1 + ", " + num2;
-    // }else if(num3 > num1 && num3 > num2 && num1 > num2){
-    //     html = num2 + ", " + num1 + ", " + num1;
-    // }
-    // else if(num1 > num2 && num1 > num3 && num2 < num3){
-    //     html = num3 + ", " + num1 + ", " + num2;
-    // }
-    // var sortedNumbers = [num1, num2, num3].sort(function (a, b) {
-    //     return a - b;
-    // });
-
-    // Hiển thị kết quả
-    // document.getElementById("result").innerHTML = sortedNumbers.join(", ");
     document.getElementById("result").innerHTML = DESCsort;
 
 }
